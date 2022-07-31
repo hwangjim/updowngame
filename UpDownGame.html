@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>업다운 게임 </title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+   // math 속성을 활용해 random 값을 뽑고, floor는 오로지 정수값만 나오게 하는 속성이다.
+   // 이후 * 100) + 1 을 통해 그 값이 1부터 100 까지 나오게끔 설정했다.
+	var ans = Math.floor(Math.random() * 100) + 1;
+	var min = 1;
+	var max = 100;
+   // 시도 횟수를 계산하는 cnt도 따로 설정해주었다. 
+	var cnt = 0;
+   // flag의 초기 값을 false로 설정해준뒤 
+	var flag = false;
+   // while(true) = 무한 반복한다 ! 
+	while(!flag) {
+		// prompt를 활용해 사용자에게 입력창을 제공한다. 
+		var input = prompt('답을 작성하세요.' + min + '번 과' + max + '번 사이의 값입니다!');
+      // 사용자의 입력값과 정답이 일치한다면, 
+		if(input == ans) {
+         // 횟수까지 포함해 정답임을 알려준다.
+			alert('정답입니다! 총' +  cnt + '번만에 맞추셨습니다!')
+         // 그리고 멈춤
+			break;
+         // 입력값이 정답보다 크다면 down, 작다면 up
+		} else if(input > ans) {
+			alert('down!')
+		} else {
+		alert('up!')			
+		}
+      // 이 일련의 과정이 끝난이후 횟수가 증가되고, 정답을 맞추지 못했다면 다시 입력창 띄워준다.
+		cnt++;
+	}
+</script>
+
+</body>
+</html>
+
